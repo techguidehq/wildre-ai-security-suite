@@ -1,0 +1,3 @@
+ExampleMutex_123
+https://example.invalid/update
+powershell.exe -EncodedCommand

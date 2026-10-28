@@ -1,0 +1,16 @@
+Command: python3 -m unittest discover -s tests -v
+Exit code: 0
+
+test_empty_summary (test_core.CoreTests.test_empty_summary) ... ok
+test_hash (test_core.CoreTests.test_hash) ... ok
+test_ioc_dedup (test_core.CoreTests.test_ioc_dedup) ... ok
+test_iocs (test_core.CoreTests.test_iocs) ... ok
+test_summary (test_core.CoreTests.test_summary) ... ok
+test_yara (test_core.CoreTests.test_yara) ... ok
+test_yara_limits (test_core.CoreTests.test_yara_limits) ... ok
+test_yara_single (test_core.CoreTests.test_yara_single) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+OK

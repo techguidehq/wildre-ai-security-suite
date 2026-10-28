@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wildre-ai-security-suite"
+version = "0.2.0"
+description = "Offline-first defensive cybersecurity tools and AI-agent workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff>=0.5"]
+mcp = ["mcp>=1.2.0"]
+
+[project.scripts]
+wildre = "wildre.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["wildre*"]

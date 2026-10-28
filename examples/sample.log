@@ -1,0 +1,4 @@
+2026-10-27 09:01:02 INFO service started
+2026-10-27 09:02:10 WARNING failed login for demo-user from 192.0.2.15
+2026-10-27 09:02:12 ERROR request rejected for https://example.com/login
+2026-10-27 09:03:01 INFO health check passed

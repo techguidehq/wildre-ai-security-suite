@@ -1,0 +1,26 @@
+[
+  {
+    "command": "python3 -m wildre.cli summary examples/sample.log",
+    "exit_code": 0,
+    "stdout": "File: examples/sample.log\nTotal lines: 4\nBlank lines: 0\nLevel counts:\n  error: 1\n  info: 2\n  warning: 1\nFirst timestamp: 2026-10-27 09:01:02\nLast timestamp: 2026-10-27 09:03:01\nNote: Keyword-based summary only; not a full parser or incident verdict.\n",
+    "stderr": ""
+  },
+  {
+    "command": "python3 -m wildre.cli iocs examples/sample.log --json",
+    "exit_code": 0,
+    "stdout": "{\n  \"urls\": [\n    \"https://example.com/login\"\n  ],\n  \"domains\": [\n    \"example.com\"\n  ],\n  \"ipv4\": [\n    \"192.0.2.15\"\n  ],\n  \"hashes\": [],\n  \"warning\": \"Candidate indicators only. Validate context; do not visit or block automatically.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": "python3 -m wildre.cli hash examples/sample.log",
+    "exit_code": 0,
+    "stdout": "{\n  \"file\": \"examples/sample.log\",\n  \"algorithm\": \"sha256\",\n  \"hex\": \"a891a6d2323837941ea03873357495c40f595b8a99df1da1164ecbfc7581cc99\",\n  \"bytes\": 230\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": "python3 -m wildre.cli yara-draft examples/suspicious_strings.txt --name ExampleRule",
+    "exit_code": 0,
+    "stdout": "// DRAFT ONLY: review, test, and tune before operational use.\nrule ExampleRule\n{\n    meta:\n        description = \"Starter rule generated from analyst-provided strings\"\n        status = \"unvalidated\"\n    strings:\n        $s1 = \"ExampleMutex_123\" ascii wide\n        $s2 = \"https://example.invalid/update\" ascii wide\n        $s3 = \"powershell.exe -EncodedCommand\" ascii wide\n    condition:\n        any of them\n}\n\n",
+    "stderr": ""
+  }
+]
